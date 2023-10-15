@@ -1,0 +1,33 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "Install Java LTS version",
+      "command": "apt update -y && apt install openjdk-17-jdk unzip"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "whereis htop": {
+      "name": "whereis htop",
+      "command": "whereis htop"
+    },
+    "java version": {
+      "name": "Show java version",
+      "command": "java --version",
+      "runAtStart": true
+    },
+    "mvn download dependecies": {
+      "name": "Download dependencies (Maven)",
+      "command": "./mvnw dependency:resolve"
+    },
+    "mvn run spring app": {
+      "name": "Run SpringBoot application (Maven)",
+      "command": "./mvnw spring-boot:run",
+      "preview": {
+        "port": 8080
+      }
+    }
+  }
+}
